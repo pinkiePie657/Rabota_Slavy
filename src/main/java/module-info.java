@@ -9,3 +9,4 @@ module org.example {
     opens org.example.model to javafx.base;
     exports org.example;
 }
+
