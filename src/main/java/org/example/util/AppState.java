@@ -11,3 +11,4 @@ public class AppState {
     public static void setCurrentUser(User user) { currentUser.set(user); }
     public static ObjectProperty<User> currentUserProperty() { return currentUser; }
 }
+// Session state
