@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #f5f6fa;"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.MainController">
+
+    <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+             style="-fx-tab-min-width: 200; -fx-tab-min-height: 50;">
+
+        <tabs>
+            <!-- Каталог (фото с рамкой) -->
+            <Tab text="📦 КАТАЛОГ ТОВАРОВ">
+                <HBox spacing="0">
+                    <VBox spacing="15" prefWidth="400" style="-fx-background-color: white; -fx-padding: 20; -fx-border-color: #dcdde1; -fx-border-width: 0 1 0 0;">
+                        <Label text="Комплектующие для окон" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2f3640;"/>
+                        <ListView fx:id="productList" VBox.vgrow="ALWAYS"
+                                  style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-padding: 5;"/>
+                        <Button text="ПЕРЕЙТИ К ОПЛАТЕ" onAction="#handleBuy" maxWidth="Infinity"
+                                style="-fx-background-color: #44bd32; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 15; -fx-background-radius: 10;"/>
+                    </VBox>
+
+                    <VBox alignment="TOP_CENTER" spacing="20" HBox.hgrow="ALWAYS" style="-fx-padding: 40;">
+                        <StackPane style="-fx-border-color: #2c3e50; -fx-border-width: 6; -fx-border-radius: 15; -fx-padding: 8;">
+                            <ImageView fx:id="productImage" fitWidth="400.0" preserveRatio="true" />
+                        </StackPane>
+                        <VBox spacing="10">
+                            <Label fx:id="productTitle" text="Выберите позицию" style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+                            <Separator />
+                            <Label fx:id="productDescription" wrapText="true" style="-fx-font-size: 16px; -fx-text-fill: #718093; -fx-line-spacing: 5;"/>
+                        </VBox>
+                    </VBox>
+                </HBox>
+            </Tab>
+
+            <!-- Личный кабинет (новый дизайн) -->
+            <Tab text="👤 ЛИЧНЫЙ КАБИНЕТ">
+                <StackPane>
+                    <VBox alignment="CENTER" spacing="20" maxWidth="520" maxHeight="520"
+                          style="-fx-background-color: white; -fx-background-radius: 20; -fx-padding: 40; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, 5);">
+                        <ImageView fx:id="avatarImage" fitWidth="120.0" fitHeight="120.0" preserveRatio="true" style="-fx-border-radius: 60; -fx-border-color: #3498db; -fx-border-width: 5;"/>
+                        <Label fx:id="profileUsername" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Label text="Мои заказы" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+
+                        <ListView fx:id="ordersList" prefHeight="180.0" style="-fx-background-radius: 10;"/>
+
+                        <HBox spacing="15" alignment="CENTER">
+                            <Button text="Редактировать профиль" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 25;"/>
+                            <Button text="Выйти из аккаунта" onAction="#handleLogout"
+                                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 10 25;"/>
+                        </HBox>
+                    </VBox>
+                </StackPane>
+            </Tab>
+
+            <!-- Новая вкладка — Чат с поддержкой -->
+            <Tab text="💬 Связь с поддержкой">
+                <VBox spacing="10" style="-fx-padding: 20; -fx-background-color: white;">
+                    <Label text="Чат с поддержкой" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+                    <TextArea fx:id="chatArea" editable="false" prefHeight="420" style="-fx-font-family: monospace;"/>
+                    <HBox spacing="10">
+                        <TextField fx:id="messageField" promptText="Напишите сообщение..." HBox.hgrow="ALWAYS"/>
+                        <Button text="Отправить" onAction="#sendMessage" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+        </tabs>
+    </TabPane>
+</AnchorPane>

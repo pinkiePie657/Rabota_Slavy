@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.controller.PaymentController"
+           style="-fx-background-color: #eef2f3;">
+
+    <VBox alignment="CENTER" spacing="25.0" maxWidth="450" maxHeight="500"
+          style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 20, 0, 0, 10);">
+
+        <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+        </padding>
+
+        <Label text="Безопасная оплата" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <VBox spacing="15" style="-fx-background-color: linear-gradient(to bottom right, #3498db, #2980b9); -fx-padding: 25; -fx-background-radius: 15;">
+            <Label text="💳 Кредитная карта" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+
+            <VBox spacing="5">
+                <Label text="Номер карты" style="-fx-text-fill: #ecf0f1; -fx-font-size: 10px;"/>
+                <TextField fx:id="cardNumberField" promptText="0000 0000 0000 0000"
+                           style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-prompt-text-fill: #bdc3c7; -fx-border-color: transparent;"/>
+            </VBox>
+
+            <HBox spacing="20">
+                <VBox HBox.hgrow="ALWAYS">
+                    <Label text="Срок" style="-fx-text-fill: #ecf0f1; -fx-font-size: 10px;"/>
+                    <TextField fx:id="expiryField" promptText="ММ/ГГ"
+                               style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-prompt-text-fill: #bdc3c7;"/>
+                </VBox>
+                <VBox HBox.hgrow="ALWAYS">
+                    <Label text="CVC" style="-fx-text-fill: #ecf0f1; -fx-font-size: 10px;"/>
+                    <PasswordField fx:id="cvvField" promptText="***"
+                                   style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-prompt-text-fill: #bdc3c7;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <VBox spacing="10" alignment="CENTER">
+            <Button text="Подтвердить и оплатить" onAction="#handleProcessPayment"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-padding: 12 40; -fx-background-radius: 30; -fx-cursor: hand;"/>
+
+            <Button text="Вернуться назад" onAction="#handleCancel"
+                    style="-fx-background-color: transparent; -fx-text-fill: #7f8c8d; -fx-cursor: hand;"/>
+        </VBox>
+
+        <Label fx:id="paymentStatus" text="" style="-fx-text-fill: #e74c3c;"/>
+    </VBox>
+</StackPane>

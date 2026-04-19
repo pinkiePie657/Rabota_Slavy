@@ -1,0 +1,61 @@
+.list-view {
+    -fx-background-radius: 5;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+.button {
+    -fx-cursor: hand;
+    -fx-transition: 0.3s;
+}
+
+.button:hover {
+    -fx-opacity: 0.8;
+}
+/* Поле ввода чата */
+.text-field {
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 8 15;
+    -fx-border-color: #ddd;
+}
+
+/* Область сообщений */
+.text-area {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-background-color: transparent;
+    -fx-border-color: #eee;
+}
+
+/* Акцентная кнопка */
+.button-primary {
+    -fx-background-color: linear-gradient(to bottom, #3498db, #2980b9);
+    -fx-background-radius: 15;
+    -fx-text-fill: white;
+}
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-background-color: #f4f4f4;
+}
+
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.text-field, .password-field {
+    -fx-background-radius: 3;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+}

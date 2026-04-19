@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.AuthController"
+      style="-fx-background-color: #f0f2f5;">
+
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <Label text="Вход в систему" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+
+    <VBox spacing="10.0" maxWidth="300">
+        <TextField fx:id="loginField" promptText="Логин"
+                   style="-fx-padding: 10; -fx-background-radius: 5;"/>
+
+        <PasswordField fx:id="passwordField" promptText="Пароль"
+                       style="-fx-padding: 10; -fx-background-radius: 5;"/>
+    </VBox>
+
+    <HBox spacing="15.0" alignment="CENTER">
+        <Button text="Войти" onAction="#handleLogin"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-padding: 10 30; -fx-font-weight: bold; -fx-background-radius: 5;"/>
+
+        <Button text="Регистрация" onAction="#handleRegistration"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 10 20; -fx-font-weight: bold; -fx-background-radius: 5;"/>
+    </HBox>
+
+    <Button text="Продолжить как гость" onAction="#handleGuest"
+            style="-fx-background-color: transparent; -fx-text-fill: #7f8c8d; -fx-underline: true; -fx-cursor: hand;"/>
+
+    <Label fx:id="statusLabel" text="..." style="-fx-text-fill: #e74c3c;"/>
+</VBox>
